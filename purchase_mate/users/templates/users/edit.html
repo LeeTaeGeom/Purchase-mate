@@ -1,0 +1,8 @@
+<form action="{% url 'users:update'%}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <p>이름 : <input type="text" name="name" value="{{user.profile.name}}" required></p>
+    <p>전화번호 : <input type="text" name="phnum" value="{{user.profile.phnum}}" required></p>
+    <p>주소 : <input type="text" name="address" value="{{user.profile.address}}" required></p>
+
+    <button type="submit">제출</button>
+</form>
