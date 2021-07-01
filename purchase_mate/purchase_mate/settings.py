@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "posts",
     "users",
     "allauth",
     "allauth.account",
@@ -52,7 +53,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 ROOT_URLCONF = "purchase_mate.urls"
@@ -60,7 +61,7 @@ ROOT_URLCONF = "purchase_mate.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR,'purchase_mate','templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -130,7 +131,7 @@ STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "sns_project", "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "purchase_mate", "static")]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
