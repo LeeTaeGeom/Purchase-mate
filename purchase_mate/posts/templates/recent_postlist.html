@@ -2,4 +2,17 @@
 {% load static %}
 {% block content %}
 
+<header>
+    <h2> 최근 게시물 </h2>
+</header>
+
+{% for post in post %}
+    상품명: {{post.title}}
+    작성자: {{post.writer}}
+    수량:   {{post.quantity}}
+    총가격: {{post.price}}
+    목표인원: {{post.people}}
+    <a href="{% url 'posts:detail' post.id %}">{{post.title}}</a>
+{% endfor %}
+
 {% endblock %}
