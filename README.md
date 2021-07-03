@@ -21,11 +21,9 @@
 [**Python**](https://www.python.org)을 메인 프로그래밍 언어를 사용하고,
 [**Django**](https://www.djangoproject.com)을 메인으로 이용한다.
 
-## 2. Python
-
 ### 2.1. 버전 정보
 
-_추가 작성예정_
+본 해커톤 프로젝트는 python 3.9.1 버전을 이용한다.
 
 ### 2.2. 외부 라이브러리
 
@@ -34,7 +32,7 @@ _추가 작성예정_
 ## 3. 서버 실행
 
 ```
-$ python manage.py runserver (예정)
+$ python manage.py runserver 
 ```
 
 ## 4. 환경변수 파일
