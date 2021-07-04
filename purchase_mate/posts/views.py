@@ -21,6 +21,7 @@ def create(request):
     makepost_post.quantity=request.POST['quantity']
     makepost_post.price=request.POST['price']
     makepost_post.people=request.POST['people']
+    makepost_post.category=request.POST['category']
     makepost_post.save()
     return redirect('posts:detail',makepost_post.id)
 
@@ -35,6 +36,7 @@ def update(request, id):
     update_post.quantity=request.POST['quantity']
     update_post.price=request.POST['price']
     update_post.people=request.POST['people']
+    update_post.category=request.POST['category']
     update_post.save()
     return redirect('posts:detail',update_post.id)
 
