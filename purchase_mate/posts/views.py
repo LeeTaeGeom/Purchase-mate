@@ -44,3 +44,23 @@ def delete(request,id):
     delete_post = Post.objects.get(id = id)
     delete_post.delete()
     return redirect("posts:recent_postlist")
+
+def food(request):
+    
+    post = Post.objects.filter(category='식자재')
+    return render(request,'category/food.html',{'post':post})
+
+def daily_necessity(request):
+    
+    post = Post.objects.filter(category='생필품')
+    return render(request,'category/daily_necessity.html',{'post':post})
+
+def ott(request):
+    
+    post = Post.objects.filter(category='OTT 서비스')
+    return render(request,'category/ott.html',{'post':post})
+
+def etc(request):
+    
+    post = Post.objects.filter(category='기타')
+    return render(request,'category/etc.html',{'post':post})
