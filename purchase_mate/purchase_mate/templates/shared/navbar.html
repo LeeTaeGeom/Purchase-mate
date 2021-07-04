@@ -45,12 +45,11 @@
 
         <ul style="width:20%;"></ul>
         <div class="collapse navbar-collapse" id="navbarNav">
-
+            {% if 'posts' not in request.path %}
             <div style=" display:flex; justify-content:space-around; padding-top:10px; ">
                 <div class="nav-menu">
                     <ul class="navbar-nav">
                         <li>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#category">카테고리</a>
@@ -67,8 +66,6 @@
                         <li class="nav-item">
                             <a class="nav-link " href="">기타</a>
                         </li>
-
-
                     </ul>
                 </div>
 
@@ -98,7 +95,57 @@
                 </div>
                 {%endif%}
             </div>
+            {% else %}
+            <div style=" display:flex; justify-content:space-around; padding-top:10px; ">
+                <div class="nav-menu">
+                    <ul class="navbar-nav">
+                        <li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{%url 'posts:recent_postlist'%}">카테고리</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="">식자재</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="">생필품</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="">OTT 서비스</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="">기타</a>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="nav-menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{%url 'posts:recent_postlist'%}">최근 게시물</a>
+                            <a class="nav-link " href="{%url 'posts:recent_postlist'%}">최근 게시물 목록</a>
+
+                        </li>
+                        {%if user.is_authenticated%}
+                        <li>
+                            <a class="nav-link " href="{%url 'posts:makepost'%}">게시물 작성하기</a>
+
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {%if user.is_authenticated%}
+                <div class="nav-menu">
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{%url 'posts:recent_postlist'%}">구독</a>
+                        </li>
+                    </ul>
+                </div>
+                {%endif%}
+            </div>
+            {% endif %}
 
         </div>
     </div>
