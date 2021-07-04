@@ -12,6 +12,7 @@
     수량:   {{post.quantity}}
     총가격: {{post.price}}
     목표인원: {{post.people}}
+    카테고리: {{post.category}}
     <a href="{% url 'posts:detail' post.id %}">{{post.title}}</a>
 {% endfor %}
 
