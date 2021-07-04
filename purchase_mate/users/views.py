@@ -1,6 +1,6 @@
 from .models import Profile
 from django.shortcuts import render, redirect
-
+from posts.models import Post
 # Create your views here.
 
 
@@ -21,4 +21,13 @@ def update(request):
     update_profile.address = request.POST["address"]
     update_profile.save()
 
-    return redirect("users:mypage")
+    return redirect("users:introduce")
+
+def mypost(request):
+    user=request.user
+    mypost=Post.objects.filter(writer=user)
+   
+    return render(request, "users/mypost.html",{"post":mypost})
+
+def introduce(request):
+    return render(request, "introduce.html")

@@ -7,4 +7,6 @@ urlpatterns = [
     path("mypage/", mypage, name="mypage"),
     path("edit/", edit, name="edit"),
     path("update/", update, name="update"),
+    path("mypost/",mypost,name="mypost"),
+    path("introduce/",introduce,name="introduce"),
 ]
