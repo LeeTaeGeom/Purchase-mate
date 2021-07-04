@@ -53,42 +53,61 @@
 
         <div class="recent" id="recent">
             {% for post in posts %}
-            <a href="{%url 'posts:detail' post.id%}">
-                {%if post.category == '식자재'%}
-                <img src="../../static/images/vegetable_icon.svg" style="border:solid green 3px; border-radius:10%; background-color:#aad4b3; width:100%; height:100%;" alt="food">
-                {%elif post.category == '생필품'%}
-                <img src="../../static/images/plates_icon.svg" style="border:solid #06C2F4 3px; border-radius:10%; background-color:#86cdd7; width:100%; height:100%;" alt="daily_necessity">
-                {%elif post.category == 'OTT 서비스'%}
-                <img src="../../static/images/netflix_icon.svg" style="border:solid lightseagreen 3px; border-radius:10%; background-color:#8ddfd5; width:100%; height:100%;" alt="ott">
-                {%else%}
-                <img src="../../static/images/etc_icon.svg" style="border:solid orange 3px; border-radius:10%; background-color:#f3d6bf; width:100%; height:100%;" alt="etc">
-                {%endif%}
+
+
+            <a href="{%url 'posts:detail' post.id%}" style="text-decoration: none; color:black;">
+                <p>
+                    <p style="text-align: center;">
+                        {%if post.category == '식자재'%}
+                        <img src="../../static/images/vegetable_icon.svg"
+                            style="border:solid green 3px; border-radius:10%; background-color:#aad4b3; width:80%; height:80%;"
+                            alt="food">
+                        {%elif post.category == '생필품'%}
+                        <img src="../../static/images/plates_icon.svg"
+                            style="border:solid #06C2F4 3px; border-radius:10%; background-color:#86cdd7; width:80%; height:80%;"
+                            alt="daily_necessity">
+                        {%elif post.category == 'OTT 서비스'%}
+                        <img src="../../static/images/netflix_icon.svg"
+                            style="border:solid lightseagreen 3px; border-radius:10%; background-color:#8ddfd5; width:80%; height:80%;"
+                            alt="ott">
+                        {%else%}
+                        <img src="../../static/images/etc_icon.svg"
+                            style="border:solid orange 3px; border-radius:10%; background-color:#f3d6bf; width:80%; height:80%;"
+                            alt="etc">
+                        {%endif%}
+                    </p>
+                    <p>
+                        <h6 style=" text-align:center;">{{post.title}}</h6>
+                    </p>
+                </p>
             </a>
-            {%endfor%}            
+
+
+            {%endfor%}
         </div>
     </div>
     <p class="more"><a href="{% url 'posts:recent_postlist'%}">더보기</a></p>
+
 
     <!-- subscribe -->
     {%if user.is_authenticated%}
     <div class="subscribe_cover">
         <div class="subscribe" id="subscribe">
-            {% for my_post in my_posts %}
-            <a href="{%url 'posts:detail' my_post.id%}">
-                {%if my_post.category == '식자재'%}
-                <img src="../../static/images/vegetable_icon.svg" style="border:solid green 3px; border-radius:10%; background-color:#aad4b3; width:100%; height:100%;" alt="food">
-                {%elif my_post.category == '생필품'%}
-                <img src="../../static/images/plates_icon.svg" style="border:solid #06C2F4 3px; border-radius:10%; background-color:#86cdd7; width:100%; height:100%;" alt="daily_necessity">
-                {%elif my_post.category == 'OTT 서비스'%}
-                <img src="../../static/images/netflix_icon.svg" style="border:solid lightseagreen 3px; border-radius:10%; background-color:#8ddfd5; width:100%; height:100%;" alt="ott">
-                {%else%}
-                <img src="../../static/images/etc_icon.svg" style="border:solid orange 3px; border-radius:10%; background-color:#f3d6bf; width:100%; height:100%;" alt="etc">
-                {%endif%}
-            </a>
-            {%endfor%}           
-            
+            <div>
+                <p style="text-align:center;"><img style="width:60%;" src="../static/images/no_image.svg" alt=""></p>
+            </div>
+            <div>
+                <p style="text-align:center;"><img style="width:60%;" src="../static/images/no_image.svg" alt=""></p>
+            </div>
+            <div>
+                <p style="text-align:center;"><img style="width:60%;" src="../static/images/no_image.svg" alt=""></p>
+            </div>
+            <div>
+                <p style="text-align:center;"><img style="width:60%;" src="../static/images/no_image.svg" alt=""></p>
+            </div>
+
         </div>
-            
+
     </div>
     <p class="more"><a href="">더보기</a></p>
     {% endif %}
