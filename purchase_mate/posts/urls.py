@@ -12,4 +12,8 @@ urlpatterns = [
     path('edit/<str:id>', edit, name="edit"),
     path('update/<str:id>',update, name="update"),
     path('delete/<str:id>', delete, name="delete"),
+    path('category/food/',food,name="food"),
+    path('category/daily_necessity/',daily_necessity,name="daily_necessity"),
+    path('category/ott/',ott,name="ott"),
+    path('category/etc/',etc,name="etc"),
 ]
